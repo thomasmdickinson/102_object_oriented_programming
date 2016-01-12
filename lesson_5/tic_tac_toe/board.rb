@@ -39,7 +39,7 @@ class Board
   end
 
   def any_corners_open?
-    !board.unmarked_corner_keys.empty?
+    !self.unmarked_corner_keys.empty?
   end
 
   def center_open?
@@ -126,28 +126,6 @@ class Board
   def line_almost_complete?(squares)
     unique_markers = squares.collect(&:marker).uniq
     compact_markers = squares.collect(&:marker).reject { |i| i == ' ' }
-    return true if unique_markers.size == 2 && compact_markers.size == 2
-    false
-  end
-end
-
-class Square
-  INITIAL_MARKER = ' '
-  attr_accessor :marker
-
-  def initialize(marker=INITIAL_MARKER)
-    @marker = marker
-  end
-
-  def to_s
-    @marker
-  end
-
-  def unmarked?
-    marker == INITIAL_MARKER
-  end
-
-  def marked?
-    marker != INITIAL_MARKER
+    unique_markers.size == 2 && compact_markers.size == 2
   end
 end
