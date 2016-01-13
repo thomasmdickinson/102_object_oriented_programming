@@ -1,3 +1,5 @@
+require_relative 'hand'
+
 class Participant
   attr_accessor :name, :hand, :score
 

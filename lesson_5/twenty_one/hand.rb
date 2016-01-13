@@ -1,5 +1,6 @@
 class Hand
   attr_accessor :cards, :has_hole
+  alias :hole? :has_hole
 
   def initialize
     @cards = []
@@ -14,10 +15,6 @@ class Hand
         puts "  " + card.to_s
       end
     end
-  end
-
-  def hole?
-    @has_hole
   end
 
   def total

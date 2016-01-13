@@ -15,11 +15,11 @@ class Card
 
   def determine_point_value
     if @value.is_a?(Integer)
-      return @value
+      @value
     elsif @value == 'Ace'
-      return 11
+      11
     else
-      return 10
+      10
     end
   end
 end

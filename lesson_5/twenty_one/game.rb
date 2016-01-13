@@ -1,5 +1,5 @@
-require_relative 'card'
-require_relative 'collection'
+require_relative 'deck'
+require_relative 'hand'
 require_relative 'participant'
 
 class TwentyOneGame
@@ -167,5 +167,5 @@ class TwentyOneGame
   end
 end
 
-game = Game.new
+game = TwentyOneGame.new
 game.play
